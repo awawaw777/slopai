@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="page-heading">
+<a class="back" href="{{ url_for('index') }}#catalog">← Каталог компьютеров</a>
+<p class="eyebrow">{{ preset.category }}</p>
+<h1>SlopAI {{ preset.name }}<span class="lime">.</span>
+</h1>
+<p class="muted">{{ preset.tagline }}</p>
+</div>
+<div class="product-detail-grid">
+<section class="panel">
+<img class="detail-image" src="{{ url_for('static',filename='pc-product.png') }}" alt="Иллюстрация компьютера SlopAI {{ preset.name }}" width="1024" height="1024">
+<p class="muted caption">Внешний вид иллюстративный. Точные компоненты перечислены справа.</p>
+</section>
+<section class="panel">
+<span class="chip">{{ preset.label }}</span>
+<h2 class="detail-title">Полный состав</h2>
+<dl class="specs detail-specs">{% for key,part in parts.items() %}<div>
+<dt>{{ categories[key] }}</dt>
+<dd>{{ part.name }}<small>{{ part.detail }}</small>
+</dd>
+</div>{% endfor %}</dl>
+<div class="summary-total">
+<span>Стоимость компонентов</span>
+<strong>{{ total|rub }}</strong>
+</div>
+<form method="post" action="{{ url_for('add_cart') }}">
+<input type="hidden" name="csrf_token" value="{{ csrf_token }}">{% for key,part in parts.items() %}<input type="hidden" name="{{ key }}" value="{{ part.id }}">{% endfor %}<button class="button primary full" type="submit">Добавить в корзину <span>+</span>
+</button>
+</form>
+<a class="details-link" href="{{ url_for('configure',preset=preset.id) }}">Изменить комплектующие →</a>
+<p class="muted caption">Примерная цена. ОС и периферия не включены. Демо-заявка без онлайн-оплаты.</p>
+</section>
+</div>
+{% endblock %}

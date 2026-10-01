@@ -1,0 +1,40 @@
+test_cart_limit_and_remove (test_app.ShopTests.test_cart_limit_and_remove) ... ok
+test_duplicate_and_bad_registration (test_app.ShopTests.test_duplicate_and_bad_registration) ... ok
+test_order_and_owner_isolation (test_app.ShopTests.test_order_and_owner_isolation) ... ok
+test_pages_and_csrf (test_app.ShopTests.test_pages_and_csrf) ... ok
+test_prices_compatibility_and_tampering (test_app.ShopTests.test_prices_compatibility_and_tampering) ... ok
+test_rate_limit (test_app.ShopTests.test_rate_limit) ... ok
+test_registration_login_password_hash (test_app.ShopTests.test_registration_login_password_hash) ... ok
+test_concurrent_first_start_observes_one_complete_key (test_hardening.ConfigurationTests.test_concurrent_first_start_observes_one_complete_key) ... ok
+test_database_permissions_and_symlink_rejection (test_hardening.ConfigurationTests.test_database_permissions_and_symlink_rejection) ... ok
+test_insecure_production_configuration_rejected (test_hardening.ConfigurationTests.test_insecure_production_configuration_rejected) ... ok
+test_invalid_mode_and_network_hosts_in_local_mode_rejected (test_hardening.ConfigurationTests.test_invalid_mode_and_network_hosts_in_local_mode_rejected) ... ok
+test_local_keys_are_persistent_private_and_unique_per_install (test_hardening.ConfigurationTests.test_local_keys_are_persistent_private_and_unique_per_install) ... ok
+test_production_https_cookie_headers_and_host (test_hardening.ConfigurationTests.test_production_https_cookie_headers_and_host) ... ok
+test_production_missing_secret_does_not_reuse_disk_secret (test_hardening.ConfigurationTests.test_production_missing_secret_does_not_reuse_disk_secret) ... ok
+test_short_secret_rejected_outside_tests (test_hardening.ConfigurationTests.test_short_secret_rejected_outside_tests) ... ok
+test_tests_do_not_create_real_instance_or_secret (test_hardening.ConfigurationTests.test_tests_do_not_create_real_instance_or_secret) ... ok
+test_allowlist_excludes_runtime_data_and_build_is_reproducible (test_hardening.ReleaseTests.test_allowlist_excludes_runtime_data_and_build_is_reproducible) ... ok
+test_contact_controls_rejected_without_creating_order (test_hardening.RequestHardeningTests.test_contact_controls_rejected_without_creating_order) ... ok
+test_local_mode_does_not_serve_remote_clients_or_trust_forwarded_ip (test_hardening.RequestHardeningTests.test_local_mode_does_not_serve_remote_clients_or_trust_forwarded_ip) ... ok
+test_new_password_minimum_and_legacy_login (test_hardening.RequestHardeningTests.test_new_password_minimum_and_legacy_login) ... ok
+test_old_signing_key_cookie_is_rejected_after_rotation (test_hardening.RequestHardeningTests.test_old_signing_key_cookie_is_rejected_after_rotation) ... ok
+test_operator_can_revoke_all_logins_without_deleting_accounts (test_hardening.RequestHardeningTests.test_operator_can_revoke_all_logins_without_deleting_accounts) ... ok
+test_origin_rejects_same_site_sibling_even_with_valid_csrf (test_hardening.RequestHardeningTests.test_origin_rejects_same_site_sibling_even_with_valid_csrf) ... ok
+test_catalog_help_filters_sorting (test_security.SecurityTests.test_catalog_help_filters_sorting) ... ok
+test_csrf_unicode_cross_origin_host_and_size (test_security.SecurityTests.test_csrf_unicode_cross_origin_host_and_size) ... ok
+test_delete_owner_confirmation_csrf_and_get (test_security.SecurityTests.test_delete_owner_confirmation_csrf_and_get) ... ok
+test_deleted_order_cannot_be_recreated_by_cookie_replay (test_security.SecurityTests.test_deleted_order_cannot_be_recreated_by_cookie_replay) ... ok
+test_external_redirect_blocked (test_security.SecurityTests.test_external_redirect_blocked) ... ok
+test_logout_revokes_old_cookie (test_security.SecurityTests.test_logout_revokes_old_cookie) ... ok
+test_security_headers (test_security.SecurityTests.test_security_headers) ... ok
+test_session_expiry_and_forged_signature (test_security.SecurityTests.test_session_expiry_and_forged_signature) ... ok
+test_sqli_login_and_registration_are_data (test_security.SecurityTests.test_sqli_login_and_registration_are_data) ... ok
+test_sqli_order_and_malicious_id (test_security.SecurityTests.test_sqli_order_and_malicious_id) ... ok
+test_upgrade_keeps_old_users_and_orders (test_security.SecurityTests.test_upgrade_keeps_old_users_and_orders) ... ok
+test_xss_escaped_in_profile_search_and_address (test_security.SecurityTests.test_xss_escaped_in_profile_search_and_address) ... ok
+
+----------------------------------------------------------------------
+Ran 35 tests in 5.824s
+
+OK

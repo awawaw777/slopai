@@ -1,0 +1,7 @@
+{% extends 'base.html' %}{% block content %}<section class="empty-state">
+<p class="eyebrow">ОШИБКА {{ error.code }}</p>
+<h1>{{ 'Страница не найдена.' if error.code==404 else 'Не получилось.' }}</h1>
+<p class="muted">{{ 'Возможно, адрес изменился. Вернёмся к компьютерам?' if error.code==404 else error.description }}</p>
+<a class="button primary" href="{{ url_for('index') }}">На главную <span>↗</span>
+</a>
+</section>{% endblock %}

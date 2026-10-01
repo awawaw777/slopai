@@ -1,0 +1,45 @@
+{% extends 'base.html' %}{% block content %}
+<div class="page-heading">
+<a class="back" href="{{ url_for('index') }}">← Все компьютеры</a>
+<p class="eyebrow">СДЕЛАЙ ЕГО СВОИМ</p>
+<h1>Твоя идеальная сборка<span class="lime">.</span>
+</h1>
+<p class="muted">Выбирай детали. Мы посчитаем стоимость и проверим основные параметры совместимости.</p>
+</div>
+<form id="config-form" action="{{ url_for('add_cart') }}" method="post">
+<input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+<div class="builder-layout">
+<section class="parts-list" aria-label="Комплектующие">{% for key,label in categories.items() %}<div class="part-row">
+<span class="part-number">0{{ loop.index }}</span>
+<div class="part-control">
+<label for="{{ key }}">{{ label }}</label>
+<select name="{{ key }}" id="{{ key }}">{% for part in parts[key] %}<option value="{{ part.id }}" {{ 'selected' if selected[key]==part.id }}>{{ part.name }} — {{ part.price|rub }}</option>{% endfor %}</select>
+<p class="part-detail" id="detail-{{ key }}">{% for part in parts[key] %}{% if selected[key]==part.id %}{{ part.detail }}{% endif %}{% endfor %}</p>
+</div>
+</div>{% endfor %}</section>
+<aside class="summary">
+<div class="summary-image">
+<img src="{{ url_for('static',filename='pc-product.png') }}" alt="Иллюстрация вашей сборки" width="1024" height="1024">
+</div>
+<div class="summary-body">
+<p class="eyebrow">ТВОЙ SLOPAI</p>
+<h2>Собран по твоим правилам.</h2>
+<div id="compatibility" class="compatibility" role="status" aria-live="polite">Проверяем совместимость…</div>
+<p id="watts" class="muted caption">
+</p>
+<div class="summary-total">
+<span>Стоимость сборки</span>
+<strong id="total" aria-live="polite">—</strong>
+</div>
+<button id="add-button" class="button primary full" type="submit">Добавить в корзину <span>+</span>
+</button>
+<p class="muted caption">Основная проверка: сокет, тип памяти, питание и габариты. Изображение иллюстративное.</p>
+<noscript>
+<p>Цена и совместимость проверятся при добавлении в корзину. Для живого пересчёта включите JavaScript.</p>
+</noscript>
+</div>
+</aside>
+</div>
+</form>
+<script id="parts-data" type="application/json">{{ parts|tojson }}</script>
+{% endblock %}
