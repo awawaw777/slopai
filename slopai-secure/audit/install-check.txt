@@ -1,5 +1,0 @@
-Clean isolated Python environment: Python 3.12 / Linux
-Command: python -m pip install --only-binary=:all: -r requirements.txt
-Result: exit 0; exact versions and required SHA-256 hashes accepted.
-Command: python -m pip check
-No broken requirements found.
